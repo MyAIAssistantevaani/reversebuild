@@ -696,73 +696,177 @@
          BACKCASTING
     ========================== -->
 
-    <section class="backcast-section">
+    
+<section class="backcast-section" id="revenue-backcasting">
+  <div class="container">
 
-      <div class="container">
+    <div class="backcast-card">
 
-        <div class="backcast-card">
+      <div class="backcast-copy">
 
-          <div class="backcast-copy">
-
-            <div class="eyebrow">
-              TARGET BACKCASTING
-            </div>
-
-            <h2>
-              Start with the number.
-              Work backward.
-            </h2>
-
-            <p>
-              Instead of stopping at competitor research, translate your
-              target into measurable business requirements.
-            </p>
-
-          </div>
-
-
-          <div class="backcast-flow">
-
-            <div>
-              <small>TARGET</small>
-              <strong>$10K/mo</strong>
-            </div>
-
-            <span>→</span>
-
-            <div>
-              <small>PRICE</small>
-              <strong>$25</strong>
-            </div>
-
-            <span>→</span>
-
-            <div>
-              <small>CUSTOMERS</small>
-              <strong>400</strong>
-            </div>
-
-            <span>→</span>
-
-            <div>
-              <small>TRAFFIC</small>
-              <strong>Scenario</strong>
-            </div>
-
-          </div>
-
-          <p class="disclaimer">
-            Example calculation only. Actual requirements depend on
-            pricing, conversion, churn, acquisition costs, margins,
-            and other business-specific variables.
-          </p>
-
+        <div class="eyebrow">
+          REVENUE BACKCASTING CALCULATOR
         </div>
+
+        <h2>
+          Start with the number.
+          Work backward.
+        </h2>
+
+        <p>
+          Set a monthly revenue target, choose your customer price,
+          and estimate the conversion rate you want to plan around.
+          ReverseBuild calculates the approximate number of customers
+          and website visitors required to pursue that target.
+        </p>
 
       </div>
 
-    </section>
 
+      <div class="backcast-calculator">
+
+        <div class="calculator-inputs">
+
+          <div class="form-group">
+            <label for="targetRevenue">
+              Target Monthly Revenue ($)
+            </label>
+
+            <input
+              type="number"
+              id="targetRevenue"
+              min="1"
+              step="1"
+              value="10000"
+              inputmode="decimal"
+            >
+
+            <small>
+              The monthly revenue target you want to plan toward.
+            </small>
+          </div>
+
+
+          <div class="form-group">
+            <label for="monthlyPrice">
+              Monthly Price per Customer ($)
+            </label>
+
+            <input
+              type="number"
+              id="monthlyPrice"
+              min="0.01"
+              step="0.01"
+              value="25"
+              inputmode="decimal"
+            >
+
+            <small>
+              Your assumed average monthly revenue per customer.
+            </small>
+          </div>
+
+
+          <div class="form-group">
+            <label for="conversionRate">
+              Visitor-to-Customer Conversion (%)
+            </label>
+
+            <input
+              type="number"
+              id="conversionRate"
+              min="0.01"
+              max="100"
+              step="0.01"
+              value="2"
+              inputmode="decimal"
+            >
+
+            <small>
+              The percentage of visitors expected to become customers.
+            </small>
+          </div>
+
+        </div>
+
+
+        <button
+          type="button"
+          id="calculateBackcast"
+          class="primary-button large-button"
+        >
+          Calculate Backcast →
+        </button>
+
+
+        <div
+          id="backcastError"
+          class="calculator-error"
+          role="alert"
+          aria-live="polite"
+        ></div>
+
+
+        <div
+          id="backcastResults"
+          class="backcast-results"
+          aria-live="polite"
+        >
+
+          <div class="backcast-result">
+            <small>REQUIRED CUSTOMERS</small>
+
+            <strong id="requiredCustomers">
+              400
+            </strong>
+
+            <span>
+              customers / month
+            </span>
+          </div>
+
+
+          <div class="backcast-result">
+            <small>ESTIMATED MONTHLY VISITORS</small>
+
+            <strong id="requiredVisitors">
+              20,000
+            </strong>
+
+            <span>
+              visitors / month
+            </span>
+          </div>
+
+
+          <div class="backcast-result">
+            <small>ASSUMED CONVERSION</small>
+
+            <strong id="displayConversion">
+              2%
+            </strong>
+
+            <span>
+              planning scenario
+            </span>
+          </div>
+
+        </div>
+
+
+        <p class="disclaimer">
+          This is a planning model, not a revenue guarantee. The calculation
+          does not account for churn, refunds, discounts, taxes, payment
+          processing fees, customer acquisition cost, margins, repeat
+          purchases, or changes in conversion rates.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
     <!-- =========================
          EXAMPLES
